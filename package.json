@@ -1,0 +1,27 @@
+{
+  "name": "fedikey_exporter",
+  "version": "1.0.0",
+  "description": "Prometheus metrics endpoint for Fediverse API",
+  "main": "dist/src/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/src/index.js",
+    "dev": "tsc -w & node dist/src/index.js",
+    "test": "tsc && node dist/scripts/test-endpoints.js",
+    "test:endpoints": "node dist/scripts/test-endpoints.js",
+    "preinstall": "npx only-allow pnpm"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "node-fetch": "^2.6.9",
+    "prom-client": "^14.2.0",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "@types/node": "^20.5.0",
+    "@types/node-fetch": "^2.6.4",
+    "typescript": "^5.1.6"
+  }
+}
