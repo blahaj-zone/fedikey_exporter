@@ -53,3 +53,36 @@ scrape_configs:
 4. Customize the dashboards to suit your needs
 
 See the [dashboards documentation](docs/dashboards/README.md) for more details on available dashboards and customization options.
+
+### Running as a systemd service
+
+You can run as a systemd service by creating a unit file as follows (assuming you installed in `/opt/fedikey_exporter`:
+
+```
+cat > /etc/systemd/system/fedikey_exporter.service << 'EOL'
+[Unit]
+Description=Fedikey Exporter
+After=network.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+WorkingDirectory=/opt/fedikey_exporter
+EnvironmentFile=/opt/fedikey_exporter/.env
+ExecStart=/usr/bin/node dist/src/index.js
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+EOL
+```
+
+Then run:
+```bash
+systemctl daemon-reload && \
+systemctl enable fedikey_exporter && \
+systemctl start fedikey_exporter && \
+sleep 2 && \
+systemctl status fedikey_exporter
+```
