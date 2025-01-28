@@ -4,9 +4,9 @@ This directory contains documentation for the Fediverse Metrics Exporter:
 
 ## Contents
 
-- [API Endpoints](endpoints.md): Details about the API endpoints we scrape from different Fediverse software variants (Misskey, Calckey, Firefish, Sharkey)
-- [Prometheus Metrics](metrics.md): Documentation of all metrics exposed by our Prometheus exporter
-- [Grafana Dashboards](dashboards/): Example Grafana dashboards for visualizing the metrics
+- [API Endpoints](docs/endpoints.md): Details about the API endpoints we scrape from different Fediverse software variants (Misskey, Calckey, Firefish, Sharkey)
+- [Prometheus Metrics](docs/metrics.md): Documentation of all metrics exposed by our Prometheus exporter
+- [Grafana Dashboards](docs/dashboards/): Example Grafana dashboards for visualizing the metrics
 
 ## Software Support
 
