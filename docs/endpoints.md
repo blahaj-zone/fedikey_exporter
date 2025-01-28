@@ -28,7 +28,7 @@ These endpoints are available across all software variants (Misskey, Calckey, Fi
 - **Method**: POST
 - **Description**: Detailed instance statistics
 - **Response Fields**:
-  ```json
+  ```ts
   {
     "cpu": number,          // CPU usage percentage
     "mem": {
@@ -66,7 +66,7 @@ These endpoints are available across all software variants (Misskey, Calckey, Fi
 - **Method**: POST
 - **Description**: Information about federated instances
 - **Request Body**:
-  ```json
+  ```ts
   {
     "sort": "+pubSub",
     "limit": 100
@@ -87,7 +87,7 @@ These endpoints are available across all software variants (Misskey, Calckey, Fi
 - **Method**: POST
 - **Description**: Statistics about database tables
 - **Response Fields**:
-  ```json
+  ```ts
   [
     {
       "tablename": string,
@@ -106,7 +106,7 @@ These endpoints are available across all software variants (Misskey, Calckey, Fi
 - **Method**: POST
 - **Description**: Statistics about database indexes
 - **Response Fields**:
-  ```json
+  ```ts
   [
     {
       "tablename": string,
@@ -128,7 +128,7 @@ Different Fediverse software variants expose queue statistics through the same e
 - **Method**: POST
 - **Description**: Retrieves job queue statistics
 - **Response Structure**:
-  ```json
+  ```ts
   {
     "deliver": {
       "waiting": number,
@@ -168,7 +168,7 @@ Different Fediverse software variants expose queue statistics through the same e
 - **Method**: POST
 - **Description**: Retrieves job queue statistics (different structure from Misskey)
 - **Response Structure**:
-  ```json
+  ```ts
   {
     "deliver": {
       "waiting": number,
